@@ -1,0 +1,28 @@
+class Solution {
+    public int reverse(int x) {
+        if (x <= (-1 * Math.pow(2, 31)) || x >= (Math.pow(2, 31) - 1)) { 
+            return 0; 
+        }
+        String temp= ""; 
+        boolean isNeg = false; 
+        // x % 10 gives the last digit of an number 
+        if (x < 0) { 
+            isNeg = true; 
+            x = x *  -1; 
+        }
+        while (x >= 10) { 
+            temp += (x % 10); 
+            x /= 10; 
+        }
+        temp += x; 
+        try { 
+            int retVal = (Integer.parseInt(temp)); 
+            if (isNeg) 
+                retVal *= -1; 
+            return retVal; 
+        }
+        catch (Exception e) { 
+            return 0; 
+        }
+    }
+}
