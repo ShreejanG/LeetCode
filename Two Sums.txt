@@ -1,0 +1,22 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        
+        int sum; 
+        int[] retArr = new int[2];  
+        for (int i = 0; i < nums.length - 1; i++) { 
+            for (int j = 1; j < nums.length; j++) { 
+                if (nums[i] + nums[j] == target && i != j) { 
+                    retArr[0] = i; 
+                    retArr[1] = j; 
+                    break; 
+                }
+            }
+        }
+        return retArr; 
+    }   
+}
+
+/* The first solution I can think of is a nested for loop where
+* the sum of each element combo is saved in an array. If this 
+* sum is equal to the target, then we can stop looping. 
+* 1. Do need to create a sum variable, can directly compare the sum. */ 
